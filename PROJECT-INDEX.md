@@ -40,3 +40,15 @@ The components are independently usable prototypes. A private integration audito
 ## Next shared milestone
 
 Complete and archive the pinned cross-repository audit and read-only workbench run on a trusted Linux host. Then review component-specific security limitations and prepare versioned prototype tags. A passing static/CLI integration gate will not, by itself, establish production readiness.
+
+## Public master documentation
+
+- [Architecture](ARCHITECTURE.md)
+- [Shared engineering contract](CONTRACT.md)
+- [Definitions](DEFINITIONS.md) and [supervisor invariants](INVARIANT.md)
+- [Interoperability review](INTEROPERABILITY.md)
+- [Public roadmap](ROADMAP.md)
+- [Release plan](RELEASE-PLAN.md)
+- [Contributor guide](CONTRIBUTING.md)
+- [Public handoff](PUBLIC-HANDOFF.md)
+- [Prototype checkpoint](CHECKPOINT.md)
