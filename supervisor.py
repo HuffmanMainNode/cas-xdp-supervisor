@@ -14,7 +14,7 @@ import os
 import platform
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, List, Optional
 
 EXPECTED_REPOSITORY = "cas-xdp-supervisor"
 EXPECTED_CONTRACT_BLOB = "cd04d1046df036894a5b68796fdc007d4ab7cc82"
@@ -212,7 +212,7 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv: Optional[List[str]] = None) -> int:
     args = build_parser().parse_args(argv)
 
     if args.command == "status":
