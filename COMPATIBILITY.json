@@ -26,9 +26,9 @@
   ],
   "platforms": [
     {
-      "target": "Python 3 standard-library runtime",
+      "target": "Python 3.9+ standard-library runtime",
       "status": "planned",
-      "notes": "The prototype is written for Python 3.9+ syntax; no platform compatibility matrix has been executed."
+      "notes": "The prototype targets Python 3.9+ syntax and standard-library facilities; no platform compatibility matrix has been executed."
     }
   ],
   "dependencies": {
