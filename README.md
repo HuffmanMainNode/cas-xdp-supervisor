@@ -41,3 +41,7 @@ CI verifies the read-only prototype and six unit tests on Ubuntu 24.04 with Pyth
 ## Prototype release record
 
 See [PROTOTYPE-RELEASE.md](PROTOTYPE-RELEASE.md) for the verified source commit, evidence ceiling, supported prototype scope, limitations, and next milestone. This document stages a prototype handoff; it does not create a GitHub Release or claim production readiness.
+
+## CAS-XDP project index
+
+For the public component map and shared prototype status, see [PROJECT-INDEX.md](PROJECT-INDEX.md).
