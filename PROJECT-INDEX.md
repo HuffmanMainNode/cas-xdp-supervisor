@@ -1,6 +1,6 @@
 # CAS-XDP Public Project Index
 
-This page is the public navigation point for the CAS-XDP prototype family. It is documentation only. The repository hosting this index remains the **read-only supervisor component**, not a combined runtime or central hosted service.
+This repository is the public master and community-facing technical entry point for the CAS-XDP prototype family. It also contains the read-only supervisor component. The public master is not a combined runtime or central hosted service. Use [PUBLIC-HANDOFF.md](PUBLIC-HANDOFF.md) and [ARCHITECTURE.md](ARCHITECTURE.md) for the full project documentation.
 
 ## Project purpose
 
