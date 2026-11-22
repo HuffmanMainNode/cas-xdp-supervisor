@@ -2,22 +2,38 @@
 
 Local operator-facing control plane for the CAS-XDP defensive component family.
 
-## Responsibility
+## Current implementation
 
-The supervisor is intended to provide read-only local host auditing, display reviewed defensive action plans, coordinate explicit operator approval, and expose a narrowly scoped MCP stdio JSON-RPC 2.0 interface. It is not a remote management service.
+This repository now contains a **read-only Python prototype** with three commands:
+
+- `status`: report component lifecycle and explicitly state that enforcement is not implemented.
+- `audit`: collect low-sensitivity local runtime metadata without network access or host mutation.
+- `verify-baseline`: verify the canonical contract/schema Git blob identities and perform structural checks on this repository's compatibility manifest.
+
+Run from a clone:
+
+```sh
+python3 supervisor.py status
+python3 supervisor.py audit --json
+python3 supervisor.py verify-baseline
+python3 -m unittest discover -v
+```
 
 ## Safety boundary
 
-- Read-only inspection is the default.
-- State changes must follow the seven-stage gate in [CONTRACT.md](CONTRACT.md), including a rollback snapshot prepared before approval and mutation.
+- This prototype does not change host state, elevate privileges, attach packet filters, manage processes, or access the network.
+- State-changing operations are not available. Any future containment workflow must follow the seven-stage gate in [CONTRACT.md](CONTRACT.md), including a rollback snapshot prepared before approval and mutation.
 - No remote exploitation, outbound scanning, brute force, counter-attack, or silent privileged mutation.
-- An unavailable enforcement component must be reported as unavailable, not represented as protected.
-- MCP tools and CLI flags will be documented and schema-versioned before being treated as stable.
-
-## Current status
-
-**Lifecycle: planned.** This repository is an initialized project baseline. No executable supervisor, CLI, MCP tool, or test suite has yet been verified. See [COMPATIBILITY.json](COMPATIBILITY.json) for explicit unverified targets.
+- `XDP_PASS` is not fail-closed. Enforcement status must never be inferred from a successful audit.
+- MCP stdio tools and stable CLI flags will be added only after their interfaces and schemas are specified and tested.
 
 ## Development
 
-The canonical shared engineering rules are in [CONTRACT.md](CONTRACT.md). The compatibility manifest is validated in CI. No hosted service, proprietary subscription, or mandatory external API is intended for core local operation.
+The core uses only the Python standard library. Full JSON Schema Draft 2020-12 validation is performed in CI using a pinned CI-only validator; the offline command performs a smaller structural check and does not claim to be a full JSON Schema engine.
+
+```sh
+make test
+make verify
+```
+
+See [COMPATIBILITY.json](COMPATIBILITY.json) for planned platform targets and evidence status. No platform compatibility or enforcement capability is claimed as verified.
