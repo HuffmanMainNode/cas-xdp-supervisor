@@ -2,17 +2,7 @@ name: Contract and manifest validation
 
 on:
   push:
-    paths:
-      - 'CONTRACT.md'
-      - 'COMPATIBILITY.json'
-      - 'schemas/compatibility.schema.json'
-      - '.github/workflows/contract.yml'
   pull_request:
-    paths:
-      - 'CONTRACT.md'
-      - 'COMPATIBILITY.json'
-      - 'schemas/compatibility.schema.json'
-      - '.github/workflows/contract.yml'
   workflow_dispatch:
 
 permissions:
@@ -30,7 +20,9 @@ jobs:
           set -euo pipefail
           test "$(git hash-object CONTRACT.md)" = "cd04d1046df036894a5b68796fdc007d4ab7cc82"
           test "$(git hash-object schemas/compatibility.schema.json)" = "e565766ca037479c441ce21dd866fbb8209d7615"
-      - name: Validate compatibility manifest
+      - name: Run standard-library unit tests
+        run: python3 -m unittest discover -v
+      - name: Validate compatibility manifest against JSON Schema
         shell: bash
         run: |
           set -euo pipefail
@@ -39,7 +31,6 @@ jobs:
           import json
           from pathlib import Path
           from jsonschema import Draft202012Validator, FormatChecker
-
           schema = json.loads(Path("schemas/compatibility.schema.json").read_text(encoding="utf-8"))
           manifest = json.loads(Path("COMPATIBILITY.json").read_text(encoding="utf-8"))
           Draft202012Validator.check_schema(schema)
