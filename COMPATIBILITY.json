@@ -59,14 +59,14 @@
         "claim": "Six deterministic read-only supervisor unit tests passed on Ubuntu 24.04 with Python 3.9 through 3.13.",
         "status": "verified",
         "evidence": [
-          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44975553454"
+          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44979595408"
         ]
       },
       {
         "claim": "Canonical contract/schema Git blob identities and compatibility manifest Draft 2020-12 validation passed in CI.",
         "status": "verified",
         "evidence": [
-          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44975553454"
+          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44979595408"
         ]
       },
       {
