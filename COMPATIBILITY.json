@@ -56,21 +56,21 @@
     "highest_evidence_tier": "TIER-2",
     "claims": [
       {
-        "claim": "Read-only supervisor prototype behavior and six deterministic unit tests.",
+        "claim": "Read-only supervisor prototype behavior and six deterministic unit tests passed on Ubuntu 24.04 with Python 3.9 through 3.13.",
         "status": "verified",
         "evidence": [
-          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44975553454"
+          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44979660232"
         ]
       },
       {
-        "claim": "Local contract, compatibility-schema identity, and manifest validation in CI.",
+        "claim": "Canonical contract/schema Git blob identity checks and compatibility manifest Draft 2020-12 validation passed in each Python matrix job.",
         "status": "verified",
         "evidence": [
-          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44975553454"
+          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44979660232"
         ]
       },
       {
-        "claim": "Platform compatibility beyond the recorded Ubuntu CI environment and any MCP stdio server implementation.",
+        "claim": "Kernel enforcement, host mutation, MCP server behavior, and non-Ubuntu compatibility.",
         "status": "unverified",
         "evidence": []
       }
