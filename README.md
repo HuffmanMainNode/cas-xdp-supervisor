@@ -64,6 +64,8 @@ The recorded supervisor CI run passed six deterministic tests and compatibility 
 
 See [PROTOTYPE-RELEASE.md](PROTOTYPE-RELEASE.md) for the source commit, evidence link, exact scope, and limitations.
 
+See [CHECKPOINT.md](CHECKPOINT.md) for the dated prototype closeout and continuation gates.
+
 ## Project integration status
 
 The five public components remain independent prototypes. The private project-control master contains the offline integration auditor and local read-only workbench. The Phase 6 integration workflow has not yet produced a passing report because the private master Actions jobs failed before runner assignment. No TIER-4 integration or production claim is made.
