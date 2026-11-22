@@ -10,8 +10,8 @@
   "contract_version": "1.0",
   "lifecycle_state": "prototype",
   "capabilities": [
-    "prototype: read-only local runtime audit; verification pending",
-    "prototype: local contract, schema identity, and manifest structural checks; verification pending",
+    "verified in CI: read-only local runtime audit and lifecycle reporting on Python 3.9 through 3.13",
+    "verified in CI: local contract/schema Git blob identity checks and manifest structural checks",
     "not implemented: staged containment orchestration",
     "not implemented: MCP stdio JSON-RPC 2.0 server"
   ],
@@ -26,9 +26,14 @@
   ],
   "platforms": [
     {
-      "target": "Python 3.9+ standard-library runtime",
+      "target": "Ubuntu 24.04 with Python 3.9 through 3.13",
+      "status": "verified",
+      "notes": "Six deterministic unit tests, canonical blob identity checks, and compatibility manifest JSON Schema validation passed for each Python version."
+    },
+    {
+      "target": "Other operating systems and Linux kernel enforcement",
       "status": "planned",
-      "notes": "The prototype targets Python 3.9+ syntax and standard-library facilities; no platform compatibility matrix has been executed."
+      "notes": "No other OS, kernel enforcement, or privileged subsystem compatibility is claimed."
     }
   ],
   "dependencies": {
@@ -48,15 +53,24 @@
     "MCP stdio JSON-RPC 2.0: not implemented"
   ],
   "verification": {
-    "highest_evidence_tier": "none",
+    "highest_evidence_tier": "TIER-2",
     "claims": [
       {
-        "claim": "Read-only prototype behavior and unit tests.",
-        "status": "unverified",
-        "evidence": []
+        "claim": "Six deterministic read-only supervisor unit tests passed on Ubuntu 24.04 with Python 3.9 through 3.13.",
+        "status": "verified",
+        "evidence": [
+          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44975553454"
+        ]
       },
       {
-        "claim": "Platform compatibility and enforcement behavior.",
+        "claim": "Canonical contract/schema Git blob identities and compatibility manifest Draft 2020-12 validation passed in CI.",
+        "status": "verified",
+        "evidence": [
+          "https://github.com/HuffmanMainNode/cas-xdp-supervisor/actions/runs/44975553454"
+        ]
+      },
+      {
+        "claim": "Kernel enforcement, host mutation, MCP server behavior, and non-Ubuntu compatibility.",
         "status": "unverified",
         "evidence": []
       }
