@@ -8,58 +8,55 @@
     "url": "https://github.com/HuffmanMainNode/cas-xdp-supervisor"
   },
   "contract_version": "1.0",
-  "lifecycle_state": "planned",
+  "lifecycle_state": "prototype",
   "capabilities": [
-    "planned local read-only host audit",
-    "planned operator-facing orchestration of reviewed defensive actions",
-    "planned MCP stdio JSON-RPC 2.0 interface"
+    "prototype: read-only local runtime audit; verification pending",
+    "prototype: local contract, schema identity, and manifest structural checks; verification pending",
+    "not implemented: staged containment orchestration",
+    "not implemented: MCP stdio JSON-RPC 2.0 server"
   ],
   "negative_scope": [
     "remote exploitation",
-    "outbound scanning (except explicitly authorized bounded artifact retrieval in cas-threat-index)",
+    "outbound scanning",
     "brute-force routines",
     "counter-attack and retaliation",
     "silent privileged mutation",
+    "network access by the current prototype",
     "fabricated or simulated live operational evidence"
   ],
   "platforms": [
     {
-      "target": "Linux host control plane",
+      "target": "Python 3 standard-library runtime",
       "status": "planned",
-      "notes": "Target only; no implementation or runtime compatibility has been verified."
-    },
-    {
-      "target": "Other POSIX platforms",
-      "status": "planned",
-      "notes": "Compatibility is not yet established."
+      "notes": "The prototype is written for Python 3.9+ syntax; no platform compatibility matrix has been executed."
     }
   ],
   "dependencies": {
     "build": [
-      "Python 3 standard-library toolchain (target; version matrix not yet verified)"
+      "Python 3 interpreter"
     ],
     "runtime": [
-      "Python 3 standard library (intended core; not yet implemented)"
+      "Python standard library only"
     ],
     "optional": [
-      "JSON Schema validator for development and CI only",
-      "MCP protocol support after interface and dependency review"
+      "jsonschema==4.23.0 for CI-only full JSON Schema validation"
     ]
   },
   "interfaces": [
-    "CLI (not yet defined)",
-    "MCP stdio JSON-RPC 2.0 (planned; no tools are currently implemented)"
+    "CLI: status, audit, verify-baseline",
+    "JSON output for status and audit",
+    "MCP stdio JSON-RPC 2.0: not implemented"
   ],
   "verification": {
     "highest_evidence_tier": "none",
     "claims": [
       {
-        "claim": "Repository initialization and contract baseline are present.",
+        "claim": "Read-only prototype behavior and unit tests.",
         "status": "unverified",
         "evidence": []
       },
       {
-        "claim": "Executable behavior and platform compatibility.",
+        "claim": "Platform compatibility and enforcement behavior.",
         "status": "unverified",
         "evidence": []
       }
