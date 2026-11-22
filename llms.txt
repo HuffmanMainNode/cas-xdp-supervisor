@@ -1,0 +1,21 @@
+# CAS-XDP Supervisor
+
+This file is a concise machine-readable project guide.
+
+- Project: CAS-XDP
+- Repository: https://github.com/HuffmanMainNode/cas-xdp-supervisor
+- Lifecycle: prototype
+- Current executable: supervisor.py
+- Runtime dependencies: Python standard library only
+- Commands: status, audit, verify-baseline
+- Current behavior: read-only local metadata collection and repository baseline verification
+- Network access: none in current implementation
+- Host mutation: none in current implementation
+- Enforcement: not implemented
+- MCP server: not implemented
+- Containment: not implemented
+- Contract: CONTRACT.md
+- Compatibility manifest: COMPATIBILITY.json
+- JSON Schema: schemas/compatibility.schema.json
+- Tests: python3 -m unittest discover -v
+- Never infer additional flags, tools, or capabilities from this file.
