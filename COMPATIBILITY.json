@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "project": "CAS-XDP",
+  "repository": {
+    "owner": "HuffmanMainNode",
+    "name": "cas-xdp-supervisor",
+    "visibility": "public",
+    "url": "https://github.com/HuffmanMainNode/cas-xdp-supervisor"
+  },
+  "contract_version": "1.0",
+  "lifecycle_state": "planned",
+  "capabilities": [
+    "planned local read-only host audit",
+    "planned operator-facing orchestration of reviewed defensive actions",
+    "planned MCP stdio JSON-RPC 2.0 interface"
+  ],
+  "negative_scope": [
+    "remote exploitation",
+    "outbound scanning (except explicitly authorized bounded artifact retrieval in cas-threat-index)",
+    "brute-force routines",
+    "counter-attack and retaliation",
+    "silent privileged mutation",
+    "fabricated or simulated live operational evidence"
+  ],
+  "platforms": [
+    {
+      "target": "Linux host control plane",
+      "status": "planned",
+      "notes": "Target only; no implementation or runtime compatibility has been verified."
+    },
+    {
+      "target": "Other POSIX platforms",
+      "status": "planned",
+      "notes": "Compatibility is not yet established."
+    }
+  ],
+  "dependencies": {
+    "build": [
+      "Python 3 standard-library toolchain (target; version matrix not yet verified)"
+    ],
+    "runtime": [
+      "Python 3 standard library (intended core; not yet implemented)"
+    ],
+    "optional": [
+      "JSON Schema validator for development and CI only",
+      "MCP protocol support after interface and dependency review"
+    ]
+  },
+  "interfaces": [
+    "CLI (not yet defined)",
+    "MCP stdio JSON-RPC 2.0 (planned; no tools are currently implemented)"
+  ],
+  "verification": {
+    "highest_evidence_tier": "none",
+    "claims": [
+      {
+        "claim": "Repository initialization and contract baseline are present.",
+        "status": "unverified",
+        "evidence": []
+      },
+      {
+        "claim": "Executable behavior and platform compatibility.",
+        "status": "unverified",
+        "evidence": []
+      }
+    ]
+  }
+}
