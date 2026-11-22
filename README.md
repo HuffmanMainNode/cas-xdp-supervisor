@@ -36,4 +36,4 @@ make test
 make verify
 ```
 
-See [COMPATIBILITY.json](COMPATIBILITY.json) for planned platform targets and evidence status. No platform compatibility or enforcement capability is claimed as verified.
+CI verifies the read-only prototype and six unit tests on Ubuntu 24.04 with Python 3.9 through 3.13. This does not establish kernel enforcement, host mutation, MCP server, or non-Ubuntu compatibility.
